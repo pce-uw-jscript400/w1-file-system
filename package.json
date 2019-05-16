@@ -1,0 +1,12 @@
+{
+  "name": "01-file-interaction",
+  "version": "1.0.0",
+  "description": "File I/O with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
