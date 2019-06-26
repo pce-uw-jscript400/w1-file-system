@@ -1,9 +1,12 @@
 const fs = require('fs');
-const contents = fs.readFileSync('./data/pets.json', 'utf-8');
+const path = require('path')
+const petsFile = path.join(__dirname, 'data', 'pets.json')
+
+const contents = fs.readFileSync(petsFile, 'utf-8');
 const pets = JSON.parse(contents)
 
 function isPetAlreadyInDB(newPetName) {
-    const contents = fs.readFileSync('./data/pets.json', 'utf-8');
+    const contents = fs.readFileSync(petsFile, 'utf-8');
     const pets = JSON.parse(contents)
 
     return pets.some(function(pet) {
@@ -12,20 +15,20 @@ function isPetAlreadyInDB(newPetName) {
 }
 
 function read() {
-    const contents = fs.readFileSync('./data/pets.json', 'utf-8');
+    const contents = fs.readFileSync(petsFile, 'utf-8');
     const pets = JSON.parse(contents);
     return pets;
 }
 
 function create(name, kind, age) {
-    const contents = fs.readFileSync('./data/pets.json', 'utf-8');
+    const contents = fs.readFileSync(petsFile, 'utf-8');
     const pets = JSON.parse(contents);
     const newPet = { name: name, kind: kind, age: age};
     const doesPetExist = isPetAlreadyInDB(name);
     if (!doesPetExist) {
         pets.push(newPet);
         const stringPets = JSON.stringify(pets);
-        fs.writeFileSync('./data/pets.json', stringPets);
+        fs.writeFileSync(petsFile, stringPets);
         return read();
     } else {
         return `${name} is already a pet!`;
@@ -34,7 +37,7 @@ function create(name, kind, age) {
 
 function remove(name) {  
     //Tried to get async-await to work here, but could not figure out how, so the variables are here locally
-    const contents = fs.readFileSync('./data/pets.json', 'utf-8');
+    const contents = fs.readFileSync(petsFile, 'utf-8');
     const pets = JSON.parse(contents);
     let removedPet = pets.filter(pet => pet.name === name);
 
@@ -42,7 +45,7 @@ function remove(name) {
     if (doesPetExist) {
         const updatedPets = pets.filter(pet => pet.name !== name)
         const stringRemovedPets = JSON.stringify(updatedPets);
-        fs.writeFileSync('./data/pets.json', stringRemovedPets);
+        fs.writeFileSync(petsFile, stringRemovedPets);
         return removedPet;
     } else {
         return `No pet found by the name of ${name}`
@@ -59,7 +62,7 @@ function update(name, kind, age) {
         const filteredPetArr = pets.filter(pet => pet.name !== name);
         filteredPetArr.push(updatedPet);
         const stringifiedUpdatedPets = JSON.stringify(filteredPetArr);
-        fs.writeFileSync('./data/pets.json', stringifiedUpdatedPets);
+        fs.writeFileSync(petsFile, stringifiedUpdatedPets);
         return read();
     }
 }

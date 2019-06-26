@@ -71,7 +71,7 @@ writeFile writes the entire file and replaces existing file if there is one appe
 
 * **Question:** How would you do so?
 
-* **Your Answer:** 
+* **Your Answer:**  Not quite sure I understand the question or the scenario. If it was randomly in the middle, I would take the string object return from reading the file and then split that string and add the new data in that position. 
 
 ---
 
@@ -83,7 +83,7 @@ writeFile writes the entire file and replaces existing file if there is one appe
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** The _dirname is the directory of the current module, using this join allows to take the path of the current module and then add the further directories of data and pets.json. I'm assuming this is to help ensure that path names are correct and to allow for the _dirname to change without having to make that change in all places it is mentioned throughout the project.
 
 ### Exercise
 
