@@ -36,7 +36,6 @@ function create(name, kind, age) {
 }
 
 function remove(name) {  
-    //Tried to get async-await to work here, but could not figure out how, so the variables are here locally
     const contents = fs.readFileSync(petsFile, 'utf-8');
     const pets = JSON.parse(contents);
     let removedPet = pets.filter(pet => pet.name === name);
