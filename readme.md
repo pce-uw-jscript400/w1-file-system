@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** So that git does not keep track of each update we do while we're testing out our work. ??
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create would make the file, Read would print out the classmates info, Update would add to the classmates file and Delete would delete items from the classmates file
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** Create: append Read: fs.readFile  Update: update, appendFile  Delete: rmdir
 
 ---
 
@@ -54,7 +54,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** fs.readfile is asynchronous and readFileSync is not
 
 ---
 
@@ -63,6 +63,7 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
+writeFile writes the entire file and replaces existing file if there is one appendFile adds to a file, does not overwrite an existing file.
 
 ---
 
@@ -70,7 +71,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:**  Not quite sure I understand the question or the scenario. If it was randomly in the middle, I would take the string object return from reading the file and then split that string and add the new data in that position. 
 
 ---
 
@@ -82,7 +83,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** The _dirname is the directory of the current module, using this join allows to take the path of the current module and then add the further directories of data and pets.json. I'm assuming this is to help ensure that path names are correct and to allow for the _dirname to change without having to make that change in all places it is mentioned throughout the project.
 
 ### Exercise
 
