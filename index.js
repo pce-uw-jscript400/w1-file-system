@@ -1,33 +1,20 @@
-const fs = require('fs')
-let pets = fs.readFileSync('./data/pets.json', 'utf-8')
+const fs = require("fs");
+const contents = fs.readFileSync("./data/pets.json", "utf-8");
+const pets = JSON.parse(contents);
 
-// read contents
-const read = (pets) => JSON.parse(pets)
-console.log(read(pets))
+// Read contents
+const read = pets => pets;
+console.log("### This reads files ->", read(pets));
 
-// write to contents
-// pets.push({ name: "Duchess", kind: "Bird", age: 2})
-// const stringyPets = JSON.stringify(pets)
-// fs.writeFileSync('./data/pets.json', stringyPets)
+// Write to contents
+const create = pet => {
+  pets.push(pet);
+  const upsertNewPet = JSON.stringify(pets);
+  fs.writeFileSync("./data/pets.json", upsertNewPet);
+};
 
-//----- testing -------------//
-
-// write to contents
-const create = (pet) => {
-    // pets.push(pet)
-    const stringifyPets = JSON.stringify(pet)
-    fs.writeFileSync('./data/pets.json', stringifyPets)
-}
-console.log(create('Rosco', 'dog', 7))
-
-
-
-
-
-
-
-
-
-// remove from contents
-// const filteredPets = pets.filter(pet => pet === 'Duchess')
-// console.log(filteredPets)
+// Please feel free to enter new pet values below
+console.log(
+  "### This creates a new pets record ->",
+  create({ name: "Rosco", kind: "dog", age: 7 })
+);
