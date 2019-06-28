@@ -26,9 +26,9 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+**Your Answer:**
+* Hidden files and git will ignore them.
 
----
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
@@ -38,16 +38,17 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
-
----
+**Your Answer:**
+* Create classmates.txt, Read classmates.txt, Update, and/or Delete
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
-
+fs.readFileSync(path[, options]) fs.writeFileSync(file, data[, options])
+fs.appendFile(path, data[, options], callback)
+fs.copyFile(src, dest[, flags], callback)
 ---
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
@@ -55,6 +56,7 @@ Hello, Node!
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
+fs.readFile(path[, options], callback) has two options fs.readFileSync(path[, options]) has the one.  fs.readFile() reads the contents of a file where the fs.readFileSync() returns the contents of a path.  
 
 ---
 
@@ -63,7 +65,7 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
-
+fs.writeFile() will over write the current data and fs.appendFile() will add to the current contents.
 ---
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
@@ -71,6 +73,7 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
+I would import the json and parse the data into a variable.  Use that variable to find index as key to which information I wish to manipulate.  Then convert back to json format and use fs methods to write back to the file.
 
 ---
 
@@ -82,7 +85,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* petsFile is a variable that will have the direct path to the pets.json file based on index.js relative path.  So the _dirname = data since data is the folder relative to index.js and pets.json is the file of the directory/name "data".  The join method is combining the directory path, folder name, and file name.
 
 ### Exercise
 

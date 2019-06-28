@@ -8,5 +8,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremyjdz13/w1-file-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeremyjdz13/w1-file-system/issues"
+  },
+  "homepage": "https://github.com/Jeremyjdz13/w1-file-system#readme",
+  "dependencies": {
+    "moments": "0.0.2"
+  }
 }
