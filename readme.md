@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** It is a file we are going to be changing all the time.
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create a new classmate object. Read the attributes of the classmate. Update the attributes of the classmate. Delete the classmate object.
 
 ---
 
@@ -46,7 +46,8 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** fs.writeFile, fs.readFile, fs.appendFile, 
+
 
 ---
 
@@ -54,7 +55,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** one is asynchronous and the other isn't
 
 ---
 
@@ -62,7 +63,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** Appends adds to an existing file instead of overwriting it.
 
 ---
 
@@ -70,7 +71,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** Push to string and writeFileSync
 
 ---
 
@@ -82,7 +83,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** Setting a path to pets.json so it can be referenced in the code.
 
 ### Exercise
 
