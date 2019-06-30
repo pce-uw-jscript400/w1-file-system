@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** So you don't commit it to the repository since it will be changing locally. 
 
 ---
 
@@ -38,7 +38,11 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** 
+C - Create would be creating the actual file `fs.writeFile('classmates.txt')`. 
+R - Read, `fs.readFile('classmates.txt')`, 
+U - Update, `fs.appendFile('classmates.txt', 'file2.txt')`, 
+D - Delete, `fs.unlink('classmates.txt)`
 
 ---
 
@@ -70,7 +74,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** You could read the file, and store the contents of that file as a string or parsed json. Using Javascript array methods (e.g. splice) you could alter items at a specific index or append info at an index. If stored as a string you could use index of to find a specific position and insert into that position.
 
 ---
 
