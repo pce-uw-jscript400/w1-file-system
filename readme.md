@@ -22,59 +22,71 @@ Hello, Node!
 
 ### Instructions & Guiding Questions
 
-- [ ] Begin by renaming `data/pets.sample.json` to `pets.json`
+- [x] Begin by renaming `data/pets.sample.json` to `pets.json`
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** We don't want git to track the changes to this file.
 
 ---
 
-- [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
+- [x] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
 ---
 
-- [ ] One of the most common patterns we'll come across as web developers is the concept of [CRUD](https://www.codecademy.com/articles/what-is-crud). Take a moment to define what CRUD represents.
+- [x] One of the most common patterns we'll come across as web developers is the concept of [CRUD](https://www.codecademy.com/articles/what-is-crud). Take a moment to define what CRUD represents.
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
+C: Create the file or an entry in the file
+R: Read or view an entry from the file
+U: Update an entry in the file
+D: Delete someone from the file (or the wholefile)
+
 
 ---
 
-- [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
+- [x] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
-
+C: fs.write()
+R: fs.read()
+U: fs.appendFile()
+D: fs.ulink()
 ---
 
-- [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
+- [x] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
+fs.readFileSync() is asynchronous where fs.readFile() is not. fs.readFile() has a callback function.
 
 ---
 
-- [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
+- [x] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** fs.writeFile() asynchronously writes data to the file, replacing the file if it already exists. fs.appendFile() writes a new file if it doesn't exist, otherwise appends new data to the end of the file.
+
+Note: use fs.writeFile() more often in practice
 
 ---
 
-- [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
+- [x] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
 * **Question:** How would you do so?
 
 * **Your Answer:**
+Read file, translate to JSON, edit array to add the new object, write the file.
 
 ---
 
-- [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
+- [x] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
   const path = require('path')
   const petsFile = path.join(__dirname, 'data', 'pets.json')
@@ -83,6 +95,7 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+It's telling node to find the pets.json file in the data directory and assign that file path to the petsFile constant (so you can use petsFile in your code to reference the path to the file instead of using the filepath each time).
 
 ### Exercise
 
