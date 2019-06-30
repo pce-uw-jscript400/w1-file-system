@@ -91,7 +91,7 @@ D - `fs.delete`
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:** The variable petsFile has the path of pets.json stored.
+* **Your Answer:** Allows pets.json to be referenced as petsFile.
 
 ### Exercise
 
