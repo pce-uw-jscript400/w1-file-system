@@ -14,8 +14,6 @@ const fs = require('fs');
 //     console.log(pets2);
 // });
 
-//console.log(read())
-// [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 function read(){
     const pets = fs.readFileSync('./data/pets.json', 'utf-8');
     const p = JSON.parse(pets);
@@ -24,14 +22,7 @@ function read(){
 
 console.log('\nread');
 console.log(read());
-
-// console.log(create('Duchess', 'bird', 2))
-// [
-//   { name: 'Meowser', kind: 'cat', age: 3 },
-//   { name: 'Duchess', kind: 'bird', age: 2 }
-// ]
-// console.log(create('Duchess', 'bird', 2))
-// "Duchess" is already a pet!
+// [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
 function create(name, kind, age){
     const pets = fs.readFileSync('./data/pets.json', 'utf-8');
@@ -49,14 +40,15 @@ function create(name, kind, age){
 
 console.log('\ncreate');
 console.log(create('Duchess', 'bird', 2));
+// [
+//   { name: 'Meowser', kind: 'cat', age: 3 },
+//   { name: 'Duchess', kind: 'bird', age: 2 }
+// ]
 
 console.log('\ncreate');
 console.log(create('Duchess', 'bird', 2));
+// "Duchess" is already a pet!
 
-// console.log(remove('Snoopy'))
-// No pet found by the name of "Snoopy"
-// console.log(remove('Duchess'))
-// { name: 'Duchess', kind: 'bird', age: 2 }
 function remove(name){
     const pets = fs.readFileSync('./data/pets.json', 'utf-8');
     let p = JSON.parse(pets);
@@ -75,6 +67,43 @@ function remove(name){
 
 console.log('\nremove');
 console.log(remove('Snoopy'));
+// No pet found by the name of "Snoopy"
 
 console.log('\nremove');
 console.log(remove('Duchess'));
+// { name: 'Duchess', kind: 'bird', age: 2 }
+
+console.log('\nread');
+console.log(read());
+// [ { name: 'Meowser', kind: 'cat', age: 3 } ]
+
+function update(name, kind, age){
+    const pets = fs.readFileSync('./data/pets.json', 'utf-8');
+    const p = JSON.parse(pets);
+    const temp = {name, kind, age};
+    const existingItem = p.findIndex(pet => pet.name === temp.name);
+
+    if(existingItem > -1){
+        p[existingItem] = temp;
+        fs.writeFileSync('./data/pets.json', JSON.stringify(p));
+        return temp;  
+    }else{
+        return `No pet found by the name of "${temp.name}"`
+    }  
+}
+
+console.log('\nupdate');
+console.log(update('Duchess', 'bird', 3))
+// No pet found by the name of "Duchess"
+
+console.log('\nupdate');
+console.log(update('Meowser', 'cat', 4))
+// { name: 'Meowser', kind: 'cat', age: 4 }
+
+console.log('\nread');
+console.log(read())
+// [ { name: 'Meowser', kind: 'cat', age: 4 } ]
+
+console.log('\nupdate');
+console.log(update('Meowser', 'cat', 3))
+// { name: 'Meowser', kind: 'cat', age: 3 }
