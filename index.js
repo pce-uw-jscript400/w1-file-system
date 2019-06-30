@@ -56,14 +56,3 @@ function update(name, kind, age) {
     return `No pet found by the name of ${name}`
   }
 }
-
-console.log(read());
-console.log(create('Duchess', 'bird', 2));
-console.log(create('Duchess', 'bird', 2));
-console.log(remove('Snoopy'));
-console.log(remove('Duchess'));
-console.log(read());
-console.log(update('Duchess', 'bird', 3));
-console.log(update('Meowser', 'cat', 4));
-console.log(read())
-console.log(update('Meowser', 'cat', 3));
