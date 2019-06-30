@@ -107,3 +107,5 @@ console.log(read())
 console.log('\nupdate');
 console.log(update('Meowser', 'cat', 3))
 // { name: 'Meowser', kind: 'cat', age: 3 }
+
+module.exports = {create, read, update, remove}

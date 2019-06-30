@@ -4,12 +4,14 @@
   "description": "File I/O with NodeJS",
   "main": "index.js",
   "scripts": {
-    "start": "cp data/pets.sample.json data/pets.json && node index.js"
+    "start": "cp data/pets.sample.json data/pets.json && node index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jest": "^24.8.0",
     "underscore": "^1.9.1"
   }
 }
