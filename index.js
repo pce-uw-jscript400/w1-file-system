@@ -39,7 +39,7 @@ function create(name, kind, age){
     const temp = {name, kind, age};
 
     if(_.findWhere(p, temp)){
-        return temp.name + ' is already a pet!'
+        return `"${temp.name}" is already a pet!`
     }else{
         p.push(temp);
         fs.writeFileSync('./data/pets.json', JSON.stringify(p));
@@ -52,3 +52,29 @@ console.log(create('Duchess', 'bird', 2));
 
 console.log('\ncreate');
 console.log(create('Duchess', 'bird', 2));
+
+// console.log(remove('Snoopy'))
+// No pet found by the name of "Snoopy"
+// console.log(remove('Duchess'))
+// { name: 'Duchess', kind: 'bird', age: 2 }
+function remove(name){
+    const pets = fs.readFileSync('./data/pets.json', 'utf-8');
+    let p = JSON.parse(pets);
+
+    const toRemove = p.find(pet => pet.name === name);
+    if(toRemove){
+        p = p.filter(function(pet, index, arr){
+            return pet.name !== name;
+        });
+        fs.writeFileSync('./data/pets.json', JSON.stringify(p));
+        return toRemove;
+    }else{
+        return `No pet found by the name of "${name}"`
+    }  
+}
+
+console.log('\nremove');
+console.log(remove('Snoopy'));
+
+console.log('\nremove');
+console.log(remove('Duchess'));
