@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlottewest/w1-file-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charlottewest/w1-file-system/issues"
+  },
+  "homepage": "https://github.com/charlottewest/w1-file-system#readme"
 }
