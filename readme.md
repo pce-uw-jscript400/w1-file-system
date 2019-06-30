@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** We do not want git to keep track of this file as this is being constantly changed. This is mostly test/fale data and hence we dont want git to keep track of this
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** WriteFile, ReadFile, append
 
 ---
 
@@ -70,7 +70,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** Read file, convert to json appemd json in javascript stringfy it back and write file again
 
 ---
 
