@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** Because it is the file that I am manipulating during the development of the project, I don't want git to track every change that is made to that file, including all my creates, updates and removes.
 
 ---
 
@@ -39,6 +39,13 @@ Hello, Node!
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
+C - Create an entry of a student or students in the text file using the fs module using methods like .writeFileSync() or .writeFile(). Important to note that with these 2 methods, if the file file already exists, it will overwrite contents of the file with new values. If file doesn't yet exists, then it will also create it.
+
+R - Read the contents of file using methods like .readFileSync() or .readFile(). Returned content will be a buffer unless you specify the content type. Type 'utf-8' will return the contents as a string.
+
+U - In order to update contents of the file, I would need to read the file first using .readFile() or .readFileSync(). Depending on the contents of the file, I may need to parse it so that I can iterate over each item. Then, be able to locate the item you are wanting to update by using some sort of loop or javascript method to find the right item to update. Once I find the correct item, update it and then overwrite the contents of the whole file with the newly updated content using .writeFileSync() or .writeFile() methods.
+
+D - Open and read the file to get its contents. Depending on the content, I may need to parse so that I can loop over individual entry. Assuming in this case that the content is an array of items, then I would loop through each entry so that I can locate the correct item to remove. Once I know the index of the item that I want to remove, use .splice() to remove it from the array. Once that element is removed, overwrite the contents of the whole file with the new array using the .writeFile() or .writeFileSync() methods.
 
 ---
 
@@ -47,6 +54,10 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
+C - .writeFileSync()
+R - .readFileSync()
+U - .readFileSync() and .writeFileSync() #Need both to update
+D - .readFileSync() and .writeFileSync() #Need both to update
 
 ---
 
@@ -54,7 +65,8 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** .readFile() is asynchronous meaning it is non blocking. It will run without preventing code after it from running. It also requires a callback function. On the other hand, .readFileSync() is blocking which means that nothing else will run after this line until the whole file is read.
+
 
 ---
 
@@ -62,7 +74,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** .writeFile() replaces everything that is existing within a file, whereas .appendFile() adds to the end of existing content in a file. Both method create a new file if it doesn't already exist.
 
 ---
 
@@ -70,7 +82,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** I would use the .readFile() method to read the contents of the file. Parse the file so that I can loop through each entry. Assuming the content of the file is an array of object, I would find the length of this array, calculate the half of this length, making sure to round so that its a whole number. This number would then give me the index of the middle entry which I can then update its values. Once the new values of this entry is completed, I would then update the contents of the whole file using .writeFile().
 
 ---
 
@@ -82,7 +94,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** The global variable `__dirname` has a value of the directory path of the code that is being ran. In this case the code that is executed when we type `npm start` is the `index.js` file. So the value of the global variable is the directory path to our project folder. The .join() method brings together the full path to our `pets.json` which is in the `data` folder(second argument in the .join).
 
 ### Exercise
 
