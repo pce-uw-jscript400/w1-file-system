@@ -27,7 +27,7 @@ Hello, Node!
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
 * **Your Answer:**
-
+It appears in the gitignore file so it's not pushed to the repository.  It's a data source and not part of the code and doesn't need to be versioned.
 ---
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
@@ -39,7 +39,10 @@ Hello, Node!
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
-
+C - Create would create the file or overwrite and existing file.
+R - Read would read the contents of the file so the program can use those
+U - Update would add content to the file through appending the data to the file or reading the original file, adding data then rewriting the file
+D - Delete would remove the file from the file system
 ---
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
@@ -47,7 +50,10 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
-
+C - fs.writeFile or fs.writeFileSync but there are other options as well.
+R - fs.readFile or fs.readfileSync
+U - fs.appendFile or fs.writeFile to recreate original file with new content (after reading it)
+D - fs.unlink
 ---
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
@@ -55,7 +61,7 @@ Hello, Node!
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
-
+fs.readFile runs asynchronously and needs a callback function.  fs.readFileSync reads it synchronously and doesn't need a callback function.
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
@@ -63,7 +69,7 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
-
+fs.writeFile replaces the original file with a new copy.  fs.appendFile will append data to the file
 ---
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
@@ -71,7 +77,7 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
-
+You can read the file into a data structure or string and use replace, splice or concat to add new data.
 ---
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
@@ -83,7 +89,8 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
-
+__dirname from node documentation - 'The directory name of the current module'.  It pulls the current file path and concats the parameters into a new logical path.
+petsFile = 'D:\JS400\Class1\w1-file-system\data\pets.json on my local machine'.
 ### Exercise
 
 You now have the knowledge needed to edit files on your file system. **A note of caution:** this means you have the ability to delete files programmatically from your machine. That can be pretty dangerous! In this exercise and class, we will never be deleting any files programmatically. If you ever find yourself in a situation where you do need to do so, be careful.
