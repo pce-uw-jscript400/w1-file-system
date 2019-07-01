@@ -36,13 +36,13 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:** Create object in 'classmates.txt', read the file, update/delete
+* **Your Answer:** Create object in 'classmates.txt', read the file, update object/file, delete object/file
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:** create - fs.appendFile, read - fs.readFile
+* **Your Answer:** create - fs.write, read - fs.readFile, update - fs.appendFile, delete - fs.unlink
 
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
@@ -61,9 +61,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
-
----
+* **Your Answer:** Split the string and pusn new item in a array, write the file
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
@@ -73,7 +71,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** assign path to a pets.json file for reference
 
 ### Exercise
 
