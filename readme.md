@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:**  We want to modify it many times and test many times without committing each time.
 
 ---
 
@@ -36,9 +36,14 @@ Hello, Node!
 
 - [ ] One of the most common patterns we'll come across as web developers is the concept of [CRUD](https://www.codecademy.com/articles/what-is-crud). Take a moment to define what CRUD represents.
 
+
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:**  
+** Create would add a new classmate.
+** Read would read one or many classmates.
+** Update would update an existing classmate.
+** Delete would delete an existing classmate.
 
 ---
 
@@ -46,7 +51,11 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** 
+** Create: appendFile
+** Read: read or readFile
+** Update: write
+** Delete: No good way to delete a single item, need an array operation like slice.  Unlink to delete an entire file.
 
 ---
 
@@ -54,7 +63,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:**  readFileSync blocks, nothing else runs until it completes.  readFile is asynchronous, code will continue to run while results are being obtained.
 
 ---
 
@@ -62,7 +71,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:**  writeFile creates or overwrites a file.  appendFile adds the content to the end of the file.
 
 ---
 
@@ -70,7 +79,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:**  For a small amount of data reading the data into an array and manipulating it there is an option.  [write](https://nodejs.org/api/fs.html#fs_fs_write_fd_buffer_offset_length_position_callback) is an option for random access.
 
 ---
 
@@ -82,7 +91,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:**  It concatenates the file parts using the system separator, ie './data/pets.json'
 
 ### Exercise
 
