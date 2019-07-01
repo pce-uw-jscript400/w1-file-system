@@ -1,7 +1,7 @@
 [
-  {
-    "name": "Meowser",
-    "kind": "cat",
-    "age": 3
-  }
-]
+    {
+      "name": "Meowser",
+      "kind": "cat",
+      "age": 3
+    }
+  ]
