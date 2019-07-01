@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 console.log('Hello, Node!');
 
 const fs = require('fs');
@@ -28,8 +26,9 @@ function create(name, kind, age){
     const pets = fs.readFileSync('./data/pets.json', 'utf-8');
     const p = JSON.parse(pets);
     const temp = {name, kind, age};
+    const existingPet = p.find(pet => pet.name === name);
 
-    if(_.findWhere(p, temp)){
+    if(existingPet){
         return `"${temp.name}" is already a pet!`
     }else{
         p.push(temp);
