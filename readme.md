@@ -26,9 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
-
----
+* **Your Answer:** So this file can be ignored as we are going to change it a lot.
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
@@ -38,41 +36,32 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
-
----
+* **Your Answer:** Create object in 'classmates.txt', read the file, update object/file, delete object/file
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** create - fs.write, read - fs.readFile, update - fs.appendFile, delete - fs.unlink
 
----
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
-
----
+* **Your Answer:** fs.readfile - asynchronous. readFileSync - not.
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
-
----
+* **Your Answer:** fs.writeFile - overrides and fs.appendFile will add to a file.
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
-
----
+* **Your Answer:** Split the string and pusn new item in a array, write the file
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
@@ -82,7 +71,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** assign path to a pets.json file for reference
 
 ### Exercise
 
