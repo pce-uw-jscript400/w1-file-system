@@ -43,10 +43,10 @@ Hello, Node!
 * **Your Answer:**
   CRUD is a pattern that gives us 4 common types of operations for building APIS. In RESTful APIs, CRUD often corresponds with HTTP methods, such as `POST`, `GET`, `PUT`, and `DELETE`.
 
-C - would be a `create` function for generates a new record inside the `classmates.txt` file.
-R - would `read` back all of the records inside the file.
-U - would find and `update` any matching records inside the file.
-D - would `delete` any matching records inside the file.
+- C - would be a `create` function for generates a new record inside the `classmates.txt` file.
+- R - would `read` back all of the records inside the file.
+- U - would find and `update` any matching records inside the file.
+- D - would `delete` any matching records inside the file.
 
 ---
 
@@ -57,10 +57,10 @@ D - would `delete` any matching records inside the file.
 * **Your Answer:**
   After going through the assignment, these are the methods that helped me acheive CRUD.
 
-C - `writeFileSync()`
-R - `readFileSync()`
-U - `writeFileSync()`
-D - `writeFileSync()`
+- Create - `writeFileSync()`
+- Rread - `readFileSync()`
+- Update - `writeFileSync()`
+- Delete - `writeFileSync()`
 
 ---
 
