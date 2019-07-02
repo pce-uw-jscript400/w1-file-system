@@ -28,6 +28,8 @@ Hello, Node!
 
 * **Your Answer:**
 
+The scripts we are writing will be making all the changes to the pets.json file and it can be updated locally.
+
 ---
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
@@ -40,6 +42,11 @@ Hello, Node!
 
 * **Your Answer:**
 
+Create: This would be a function that creates a new entry in the `classmates.txt` file.
+Read: This would be a function to see all the information in the `classmates.txt` file. 
+Update: This would be a function that would update fields in the `classmates.txt` file when information changed for a student.
+Delete: This would be a function to remove an entry in the `classmates.txt` file.
+
 ---
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
@@ -47,6 +54,11 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
+
+Create: writeFile()
+Read: readFile()
+Update: appendFile()
+Delete: unlink()
 
 ---
 
@@ -56,6 +68,8 @@ Hello, Node!
 
 * **Your Answer:**
 
+fs.readFile() reads the file asynchronously while fs.readFileSync() doesn't.
+
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
@@ -63,6 +77,8 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
+
+fs.writeFile() will write data to a file and replace the whole file if it exits. fs.appendFile() will apend the file if it exists or create the file if it doesn't.
 
 ---
 
@@ -83,6 +99,8 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+
+`path` is a path module. `path.join` joins directory of the current module with the directory `data` and the file `pets.json`.
 
 ### Exercise
 
