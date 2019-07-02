@@ -13,9 +13,7 @@ const runPetSearch = name => {
 };
 
 // Read contents
-const read = () => {
-  return pets;
-};
+const read = () => pets;
 
 // Write to contents
 const create = (name, kind, age) => {
@@ -34,6 +32,7 @@ const create = (name, kind, age) => {
   return `${name} is already a pet!`;
 };
 
+// Removes from contents
 const remove = name => {
   let petToRemove = pets.filter(pet => pet.name === name);
   // This console.log is for testing only
@@ -42,6 +41,25 @@ const remove = name => {
     const removePetNameFromList = pets.filter(pet => pet.name !== name);
     const petString = JSON.stringify(removePetNameFromList);
     fs.writeFileSync(petsFile, petString);
+  }
+  return `No pet found by the name of ${name}`;
+};
+
+// Updates contents
+const update = (name, kind, age) => {
+  const updatedPetRecord = {
+    name,
+    kind,
+    age
+  };
+  if (runPetSearch(name)) {
+    let petToUpdate = pets.filter(pet => pet.name !== name);
+    // This console.log is for testing only
+    console.log(`### the pet name to be updated is ${name}`, updatedPetRecord);
+    petToUpdate.push(updatedPetRecord);
+    const petString = JSON.stringify(petToUpdate);
+    fs.writeFileSync(petsFile, petString);
+    return read();
   }
   return `No pet found by the name of ${name}`;
 };
@@ -68,14 +86,14 @@ console.log(read());
 // My result is logging out the 'Duchess' record still even though I've removed it from the JSON???
 // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
-// console.log(update("Duchess", "bird", 3));
-// // No pet found by the name of "Duchess"
+console.log(update("Duchess", "bird", 3));
+// No pet found by the name of "Duchess"
 
-// console.log(update("Meowser", "cat", 4));
-// // { name: 'Meowser', kind: 'cat', age: 4 }
+console.log(update("Meowser", "cat", 4));
+// { name: 'Meowser', kind: 'cat', age: 4 }
 
-// console.log(read());
-// // [ { name: 'Meowser', kind: 'cat', age: 4 } ]
+console.log(read());
+// [ { name: 'Meowser', kind: 'cat', age: 4 } ]
 
-// console.log(update("Meowser", "cat", 3));
-// // { name: 'Meowser', kind: 'cat', age: 3 }
+console.log(update("Meowser", "cat", 3));
+// { name: 'Meowser', kind: 'cat', age: 3 }
