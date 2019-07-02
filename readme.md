@@ -38,11 +38,9 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:** 
-C - Create would be creating the actual file `fs.writeFile('classmates.txt')`. 
-R - Read, `fs.readFile('classmates.txt')`, 
-U - Update, `fs.appendFile('classmates.txt', 'file2.txt')`, 
-D - Delete, `fs.unlink('classmates.txt)`
+* **Your Answer:** Create would be the writing a new file called classmates.txt, Read would be accessing the data from that file, Update would be altering the data of that file and Delete would be the removal of that file. 
+
+
 
 ---
 
@@ -52,13 +50,21 @@ D - Delete, `fs.unlink('classmates.txt)`
 
 * **Your Answer:**
 
+C - Create would be creating the actual file `fs.writeFile('classmates.txt')`
+
+R - Read, `fs.readFile('classmates.txt')`
+
+U - Update, `fs.appendFile('classmates.txt', 'file2.txt')`
+
+D - Delete, `fs.unlink('classmates.txt)`
+
 ---
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** readFile() is asynchronous while readFileSync() is syncronous.
 
 ---
 
@@ -66,7 +72,7 @@ D - Delete, `fs.unlink('classmates.txt)`
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** writeFile() either creates a new file if the file does not exist, or overwrites a file with that name with a new file. appendFile() takes an existing file and appends data to the end of the file.
 
 ---
 
@@ -86,7 +92,7 @@ D - Delete, `fs.unlink('classmates.txt)`
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** The variable petsFile is using the path.join() method to create a reference to the path of the pets.json file. __dirname is a variable that references the firectory of the current module
 
 ### Exercise
 
