@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:**  It is a file we are not going to track and is data that we do not want stored in Git.
 
 ---
 
@@ -39,6 +39,11 @@ Hello, Node!
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
+Create - create a new file.
+Read - read a file.
+Update - update a file.
+Delete - delete a file.
+
 
 ---
 
@@ -48,6 +53,10 @@ Hello, Node!
 
 * **Your Answer:**
 
+Read - fs.readFile
+Write - fs.writeFile
+Update - fs.appendfile
+Delete - fs.unlink
 ---
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
@@ -55,6 +64,7 @@ Hello, Node!
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
+sync vs async: async (callback or promises or await)  sync (occurs at the same time, all at once.)
 
 ---
 
@@ -63,6 +73,8 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
+fs.writeFile - async write and replaces if the file exists.
+fs.appendfile - async append data, creates if it does not exist.
 
 ---
 
@@ -71,6 +83,17 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
+* ReadFile
+fs.readFileSync('./data/src/pets.json', utf8)
+* Parse JSON
+const pets = JSON.parse(contents)
+* Push another set
+pets.push({name: "Bingo", age: "12", kind: "jaguar"})
+* From JSON back into string
+const stringy = JSON.stringify(pets)
+* Write the array back into the file
+fs.writeFileSync('./data/src/pets.json', utf8)
+
 
 ---
 
@@ -82,7 +105,8 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:**  
+path.join will take seperate segments and put them into a single path.  In this example, it creates the same directory structure we are using for our pets.json.
 
 ### Exercise
 
