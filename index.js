@@ -7,8 +7,7 @@ const pets = JSON.parse(contents);
 // Utility pet checker
 const runPetSearch = name => {
   let isPetRecord = pets.some(record => record.name === name);
-  // This console.log is for testing only
-  console.log(`Does pet ${name} exist?`, isPetRecord);
+
   return isPetRecord;
 };
 
@@ -29,19 +28,20 @@ const create = (name, kind, age) => {
     fs.writeFileSync(petsFile, petString);
     return read();
   }
+
   return `${name} is already a pet!`;
 };
 
 // Removes from contents
 const remove = name => {
   let petToRemove = pets.filter(pet => pet.name === name);
-  // This console.log is for testing only
-  console.log(`### the pet name to be removed is ${name}`, petToRemove);
+
   if (runPetSearch(name)) {
     const removePetNameFromList = pets.filter(pet => pet.name !== name);
     const petString = JSON.stringify(removePetNameFromList);
     fs.writeFileSync(petsFile, petString);
   }
+
   return `No pet found by the name of ${name}`;
 };
 
@@ -52,15 +52,17 @@ const update = (name, kind, age) => {
     kind,
     age
   };
+
   if (runPetSearch(name)) {
     let petToUpdate = pets.filter(pet => pet.name !== name);
-    // This console.log is for testing only
-    console.log(`### the pet name to be updated is ${name}`, updatedPetRecord);
+
     petToUpdate.push(updatedPetRecord);
     const petString = JSON.stringify(petToUpdate);
     fs.writeFileSync(petsFile, petString);
+
     return read();
   }
+
   return `No pet found by the name of ${name}`;
 };
 
