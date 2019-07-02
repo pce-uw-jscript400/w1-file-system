@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** We do not want git to keep track of this file as this is being constantly changed. This is mostly test/fale data and hence we dont want git to keep track of this
 
 ---
 
@@ -38,7 +38,10 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** C- Create would create the file classmates.txt. You may also choose to add some data about some of your classmates in there
+R- Read would read out the contents of that file. This can be used to search if some person is already a part of the data set or not.
+U- update would be used to update any new members to the file or if you want to update the details of any existing classmates in the same file.
+D - delete would be used to remove some of the folks after they have graduated from the class.
 
 ---
 
@@ -46,7 +49,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** WriteFile, ReadFile, AppendFile, rmDir
 
 ---
 
@@ -54,7 +57,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** One of them does the read operation synchrnously and the other one async. A sync operation will block successive statements from executing while an async operation will not block.
 
 ---
 
@@ -62,7 +65,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** Write files replaces the contents of the file while append file appends to an existing file
 
 ---
 
@@ -70,7 +73,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** Read file, convert to json appemd json in javascript stringfy it back and write file again
 
 ---
 
@@ -82,7 +85,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** Path points to the project directory and doing join will append the data directory and pets.json to the existing path.
 
 ### Exercise
 
