@@ -34,21 +34,16 @@ const create = (name, kind, age) => {
   return `${name} is already a pet!`;
 };
 
-const remove = () => {};
-
-// Remove from contents
 const remove = name => {
-  const contents = fs.readFileSync(petsFile, "utf-8");
-  const pets = JSON.parse(contents);
-  let removePet = pets.filter(pet => pet.name === name);
-
-  if (checkForPet(name)) {
-    const updatedPetList = pets.filter(pet => pet.name !== name);
-    const removedPetString = JSON.stringify(updatedPetList);
-    fs.writeFileSync(petsFile, removedPetString);
-    return removePet;
+  let petToRemove = pets.filter(pet => pet.name === name);
+  // This console.log is for testing only
+  console.log(`### the pet name to be removed is ${name}`, petToRemove);
+  if (runPetSearch(name)) {
+    const removePetNameFromList = pets.filter(pet => pet.name !== name);
+    const petString = JSON.stringify(removePetNameFromList);
+    fs.writeFileSync(petsFile, petString);
   }
-  return `We were not able to remove the name ${name} from our list of pets. Please try again.`;
+  return `No pet found by the name of ${name}`;
 };
 
 console.log(read());
@@ -63,14 +58,15 @@ console.log(create("Duchess", "bird", 2));
 console.log(create("Duchess", "bird", 2));
 // "Duchess" is already a pet!
 
-// console.log(remove("Snoopy"));
-// // No pet found by the name of "Snoopy"
+console.log(remove("Snoopy"));
+// No pet found by the name of "Snoopy"
 
-// console.log(remove("Duchess"));
-// // { name: 'Duchess', kind: 'bird', age: 2 }
+console.log(remove("Duchess"));
+// { name: 'Duchess', kind: 'bird', age: 2 }
 
-// console.log(read());
-// // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
+console.log(read());
+// My result is logging out the 'Duchess' record still even though I've removed it from the JSON???
+// [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
 // console.log(update("Duchess", "bird", 3));
 // // No pet found by the name of "Duchess"
