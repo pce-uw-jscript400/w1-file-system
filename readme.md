@@ -29,7 +29,7 @@ Hello, Node!
 
 * **Your Answer:**
 
-##_Because we have an entry for it in .gitignore file_
+## Because we have an entry for it in .gitignore file
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
@@ -41,7 +41,7 @@ Hello, Node!
 
 * **Your Answer:**
 
-##_"cat classmates.txt" for reading the content of the file_ ##_"echo classmates.txt" for updating and in this case for appending new content to the file._ ##_"rm classmates.txt" for deleting a file._
+## "cat classmates.txt" for reading the content of the file* ##*"echo classmates.txt" for updating and in this case for appending new content to the file.\_ \_"rm classmates.txt" for deleting a file.
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
@@ -49,7 +49,13 @@ Hello, Node!
 
 * **Your Answer:**
 
-##_C: fs.writeFile(),fs.appendFile(),fs.open()_ ##_R: fs.readFile()_ ##_U: fs.appendFile()_ ##_D: fs.unlink()_
+## C: fs.writeFile(),fs.appendFile(),fs.open()
+
+## R: fs.readFile()
+
+## U: fs.appendFile()
+
+## D: fs.unlink()
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
@@ -63,7 +69,7 @@ Hello, Node!
 
 * **Your Answer:**
 
-##_fs.writeFile() re-writes whole file but fs.appendFile() adds data to the existing file instead of overwriting it._
+## fs.writeFile() re-writes whole file but fs.appendFile() adds data to the existing file instead of overwriting it.
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
@@ -71,11 +77,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
-
 ## We should read the pets.json file and parse it as a JSON then push our changes as a json object turn ut back to string and then write the file
-
----
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
