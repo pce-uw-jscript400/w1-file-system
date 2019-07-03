@@ -4,18 +4,19 @@ By the end of this lesson, you should be able to read, write, and update files w
 
 ## Core Learning Objective
 
-*	Use NodeJS APIs to interact with files and the web
+- Use NodeJS APIs to interact with files and the web
 
 ## Sub-Objectives
 
-* Define CRUD
-* Read from files
-* Overwrite files
-* Programmatically update files
+- Define CRUD
+- Read from files
+- Overwrite files
+- Programmatically update files
 
 ### Prereqs
 
 Before starting this lesson, Fork & Clone this repository. Make sure that you can run `npm start` and that you get the following output:
+
 ```
 Hello, Node!
 ```
@@ -28,7 +29,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+_Because we have an entry for it in .gitignore file_
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
@@ -40,7 +41,9 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+_"cat classmates.txt" for reading the content of the file_
+_"echo classmates.txt" for updating and in this case for appending new content to the file._
+_"rm classmates.txt" for deleting a file._
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
@@ -48,15 +51,17 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+_C: fs.writeFile(),fs.appendFile(),fs.open()_
+_R: fs.readFile()_
+_U: fs.appendFile()_
+_D: fs.unlink()_
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
-
----
+  _fs.readFile() is asynchron and does have a callback method but fs.readFileSync doesn't have a callback methode._
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
@@ -64,7 +69,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+_fs.writeFile() re-writes whole file but fs.appendFile() adds data to the existing file instead of overwriting it._
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
@@ -74,15 +79,23 @@ Hello, Node!
 
 ---
 
+We should read the pets.json file and parse it as a JSON then push our changes as a json object turn ut back to string and then write the file
+
+---
+
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
-  const path = require('path')
-  const petsFile = path.join(__dirname, 'data', 'pets.json')
+  const path = require("path");
+  const petsFile = path.join(__dirname, "data", "pets.json");
   ```
 
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+
+---
+
+## By using path and \_\_dirname and at the end logging petsFile wecan see the pets.json file's path in the console.
 
 ### Exercise
 
@@ -105,41 +118,41 @@ Assuming your `pets.json` starts with one pet like so:
 You should make the following functions and they should return the values that are commented out.
 
 ```js
-console.log(read())
+console.log(read());
 // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
-console.log(create('Duchess', 'bird', 2))
+console.log(create("Duchess", "bird", 2));
 // [
 //   { name: 'Meowser', kind: 'cat', age: 3 },
 //   { name: 'Duchess', kind: 'bird', age: 2 }
 // ]
 
-console.log(create('Duchess', 'bird', 2))
+console.log(create("Duchess", "bird", 2));
 // "Duchess" is already a pet!
 
-console.log(remove('Snoopy'))
+console.log(remove("Snoopy"));
 // No pet found by the name of "Snoopy"
 
-console.log(remove('Duchess'))
+console.log(remove("Duchess"));
 // { name: 'Duchess', kind: 'bird', age: 2 }
 
-console.log(read())
+console.log(read());
 // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
-console.log(update('Duchess', 'bird', 3))
+console.log(update("Duchess", "bird", 3));
 // No pet found by the name of "Duchess"
 
-console.log(update('Meowser', 'cat', 4))
+console.log(update("Meowser", "cat", 4));
 // { name: 'Meowser', kind: 'cat', age: 4 }
 
-console.log(read())
+console.log(read());
 // [ { name: 'Meowser', kind: 'cat', age: 4 } ]
 
-console.log(update('Meowser', 'cat', 3))
+console.log(update("Meowser", "cat", 3));
 // { name: 'Meowser', kind: 'cat', age: 3 }
 ```
 
 #### Resources
 
-* [NodeJS: File System](https://nodejs.org/api/fs.html)
-* [Codecademy: What is CRUD?](https://www.codecademy.com/articles/what-is-crud)
+- [NodeJS: File System](https://nodejs.org/api/fs.html)
+- [Codecademy: What is CRUD?](https://www.codecademy.com/articles/what-is-crud)
