@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** so git doesn't track changes to that file
 
 ---
 
@@ -38,7 +38,10 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create the file on the FS
+Read the file
+Update the file by changing the contents
+Delete the file from FS
 
 ---
 
@@ -46,7 +49,10 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** Create: fs.writeFile()
+Read: fs.readFile()
+Update: fs.appendFile(), fs.ftruncate(), fs.write()
+Delete: fs.unlink()
 
 ---
 
@@ -54,7 +60,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** fs.readFile() is asynchronous so that it won't block the current thread while it is executing. fs.readFileSync() is synchronous so the current thread will wait until it is complete.
 
 ---
 
@@ -62,7 +68,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** writeFile will overwrite an existing file. appendFile will add to end of an existing file.
 
 ---
 
@@ -70,7 +76,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** fs.write() with a position or offset argument. Or read the data from the file, edit the data and just overwrite the whole file.
 
 ---
 
@@ -82,7 +88,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** joining the current directory with 'data' and 'pets.json' using the appropriate platform specific path delimiter.
 
 ### Exercise
 
