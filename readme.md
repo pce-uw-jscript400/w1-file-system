@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** So that we don't commit those files to our git repo, these files will be changing all the time constantly. These changes aren't typically commmited.
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create the `classmates.txt` file, Read what's inside the `classmates.txt` file, Update the contents of the `classmates.txt` file like adding or removing someone, Delete the `classmates.txt` file.
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** Create is likely `fs.writeFile()` to create a new file, Read is `fs.readFile()` to read a file in, Update is `fs.appendFile()`, Remove is `fs.unlink()`
 
 ---
 
@@ -54,7 +54,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** One version is asynchronous and the other is synchronous. The async function will not block the stack like the sync function will. Async will return a promise.
 
 ---
 
@@ -62,7 +62,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** `fs.writefile()` will write to a new file, overwriting any file that may exist, `fs.appendFile()` will append to an existing file, creating it if it does not exist.
 
 ---
 
@@ -70,7 +70,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** I would likely read the file in using `fsreadFile()` and `JSON.parse()`, then add a new index to the array with my edits and then finally use `JSON.stringify()` & `fs.writeFile()` to overwrite the file with my new one.
 
 ---
 
@@ -82,7 +82,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** The first line is requiring the path module, the second is creating a path by joining the directory name of the currently running file along with the data folder and filename.
 
 ### Exercise
 
