@@ -26,7 +26,8 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:so that git will not track the changes, you do this when you know there will be a lot of changes to a file and do not need got to track them
+
 
 ---
 
@@ -38,7 +39,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer: C: create the text file, R: read the txt file, U: update (append) information to the txt file, and D: delete the txt file
 
 ---
 
@@ -46,7 +47,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:C:fs.writeFileSync() R:fs.readFileSync() U:fs.appendFileSync() D:fs.unlinkSync()
 
 ---
 
@@ -54,7 +55,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:one file is asynchronous and the readfilesync is not - it stops until it gets a call back.  
 
 ---
 
@@ -62,7 +63,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer: writefile overwrites the content of the file, while append will add to the file
 
 ---
 
@@ -70,7 +71,8 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:convert the read in string to an array, then you can add by pushing into the array
+you are creating a new file path
 
 ---
 
