@@ -53,7 +53,6 @@ const update = (name, kind, age) => {
     if (isPetInList(name, pets)) {
         remove(name);
         create(name, kind, age);
-        fs.writeFileSync('./data/pets.json', JSON.stringify(pets), 'utf8');
         return JSON.stringify(pets[pets.length - 1]);
     } else {
         return ('No pet found by the name of ' + name);
