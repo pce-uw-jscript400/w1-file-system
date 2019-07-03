@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** to prevent unnecessary commit records in repo
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** create  a classmate, read classmates, update classmatess, delete classmates
 
 ---
 
@@ -46,15 +46,20 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** 
+
+    * fs.write
+    * fs.readFile
+    * fs.appendFile
 
 ---
 
-- [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
+- [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) 
+      and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:**one is synchronous, the other is asynchronous
 
 ---
 
@@ -62,7 +67,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** write creates a new file, append adds to the contents to an existing file
 
 ---
 
@@ -70,7 +75,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:**read, parse into array, floor(array.lenght/2), splice, write
 
 ---
 
@@ -82,7 +87,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** the path.join method concatenates the path of the submitted file with 'data', and the file name 'pets.json' in a OS independent file path
 
 ### Exercise
 
