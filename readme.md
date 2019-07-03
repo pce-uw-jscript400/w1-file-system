@@ -28,11 +28,15 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+contain files that to be ognore: pets.json
+not get push/update to GitHub
+files that change all the time while testing/building
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
----
+fs.rename: rename file name
+fs.copyFile: copy content of one file to other file
+fs.readFile: print to screen contents of a file
 
 - [ ] One of the most common patterns we'll come across as web developers is the concept of [CRUD](https://www.codecademy.com/articles/what-is-crud). Take a moment to define what CRUD represents.
 
@@ -40,7 +44,16 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+CRUD: CREATE, READ, UPDATE, DELETE
+
+CREATE 
+- create a new entry and add to classmates.txt
+READ 
+- out put to screen content of classmates.txt
+UPDATE 
+- update an entry in classmates.txt that has properties matched certain params
+DELETE
+- delete an entry in classmates.txt that has properties matched certain params
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
@@ -48,7 +61,15 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+C
+fs.mkdir(path[, options], callback)
+R
+fs.read(fd, buffer, offset, length, position, callback)
+U
+fs.writeFile(file, data[, options], callback)
+D
+fs.rmdirSync(path)
+
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
@@ -56,23 +77,30 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+fs.readFileSync()
+synchronous, returns the contents of the path of the file
+fs.readFile()
+asynchronous, reads the contents of a file
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
+fs.writeFile()
+writes data to the file, replacing the file if it already exists.
+fs.appendFile()
+append data to a file, creating the file if it does not yet exist.
 
----
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
 * **Question:** How would you do so?
 
 * **Your Answer:**
+cut json array in 2 in the middle use length
+create a new json file with 1st part + new stuff + 2nd part
 
----
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
@@ -83,6 +111,10 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+absolute path
+C:\source\Summer2019\w1-file-system\data\pets.json
+relative path
+data\pets.json
 
 ### Exercise
 
