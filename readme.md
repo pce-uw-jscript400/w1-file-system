@@ -28,7 +28,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+--- Files referenced in `.gitignore` are ignored during commit. A file or directory can be identified in `.gitignore` for many reasons, such as sensitive data files, api keys, etc. Let's pretend that pets.json is a sensitive data file.
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
 
@@ -40,7 +40,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+--- CRUD = Create/Read/Update/Delete. Create describes the function(s) used to create the classmates.txt file. Read describes the function(s) used to read the contents of the classmates.txt file. Update describes the function(s) used to update the contents of the classmates.txt file. Delete describes the function(s) used to delete contents from the classmates.txt file.
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
@@ -49,6 +49,10 @@ Hello, Node!
 * **Your Answer:**
 
 ---
+-Create: `fs.writeFile(); fs.writeFileSync()`
+-Read: `fs.readFile(); fs.readFileSync()`
+-Update: `fs.writeFile(); fs.writeFileSync(); fs.appendFile(); fs.appendFileSync()`
+-Remove: `fs.ftruncate(); fs.ftruncateSync(); fs.unlink(); fs.unlinkSync()`
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
@@ -56,7 +60,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+--- `fs.readfile()` is asynchronous, meaning it does not run in parallel to other functions/code and will block/must complete first. `fs.readFileSync()` is synchronous, meaning it can run independently of the rest of the code. `fs.readfileSync()` does not take a callback function.
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
@@ -64,7 +68,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+---`fs.writeFile()` will author data to the file, will replace any existing data present in the file; `fs.appendFile` will add data to the file, creating the file if does not yet exist. `fs.appendFile` does not overwrite existing data. Both methods are asyncronous, and take a call back function (versus writeFileSync or appendFileSync)
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
@@ -72,7 +76,7 @@ Hello, Node!
 
 * **Your Answer:**
 
----
+---First, I need to require fs, then use fs.readFileSync against the file. Next I likely should create a copy of the file contents using variable assignment, so that i can edit content without changing the source file yet. I would then want to identify "the middle" of the file or some target in the contents for edit, and write whatever statements necessary to successfully edit the contents as needed. Lastly, i would replace the file contents with the new, edited contents stored in my variable using fs.writeFileSync. Depending on the type of file or the contents i'm editing, i may need to use other methods or functions such as JSON.Parse or JSON.stringify to ensure the contents are retrieved from/ committed to the file correctly.
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
   ```js
@@ -83,6 +87,8 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+
+--- Essentially, we are defining the path to a file `pets.json` by using `path.join` method. `path.join` takes multiple inputs and joins them, and in this example we are taking the directory in which the `index.js` file is found using `__dirname`, and appending to that `/data/pets.json`. This particular path implies the files are in seperate folders. If they were in the same folder, we could simply use` __dirname` and `pets.json`, for example. This path is then assigned to `petsFile` so that it can be referenced elsewhere in the code, such as scenarios where we read, update or delete from that file.
 
 ### Exercise
 
