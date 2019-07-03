@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** It is sample data that can change a lot and could be used for testing, so it doesn't make a lot of sense to push.
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create: this would be a function when we are adding something to the file. Read: this would be a function to read the contents of the file. Update: this would be a function that would update/change the content of the file. Delete: this would be function to remove content/text/objects from the file.
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** Create: write() or writeFile() , Read: readFile() , Update: writeFile() or appendFile() , Delete: unlink() will remove a file.
 
 ---
 
@@ -54,7 +54,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** readFile() asynchronously reads the contents of the file, while readFileSync() returns the contents of the file path.
 
 ---
 
@@ -62,7 +62,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** appendFile adds to the end of the file, writeFile overwrites the file.
 
 ---
 
@@ -70,7 +70,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** read the file readFile(), translate to json, edit the array, push object, and stringify
 
 ---
 
@@ -82,7 +82,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** "require()" specifies that a module needs to be imported, and then petsfile specifies the path to the required file. 
 
 ### Exercise
 
