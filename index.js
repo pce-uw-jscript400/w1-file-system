@@ -1,4 +1,6 @@
 const fs = require('fs')
+const path = require('path')
+const petsFile = path.join(__dirname, 'data', 'pets.json')
 
 const read = function (){
   const contents = fs.readFileSync('./pets.json', 'utf-8')

@@ -105,7 +105,7 @@ appendFile will not create a new file.
 
 const fs = require('fs')
 // read in the contents of the file
-const contents = fs.readFileSync('./pets.json', 'utf-8')
+const contents = fs.readFileSync('./data/pets.json', 'utf-8')
 // parse contents so it's a JS array
 const pets = JSON.parse(contents)
 // push in another pet
@@ -113,7 +113,7 @@ pets.push({name: "Oliver", kind: "Cat", age: 2})
 // transform back into a string
 const stringy = JSON.stringify(pets)
 // write entire array to file
-fs.writeFileSync('pets.json', stringy)
+fs.writeFileSync('./data/pets.json', stringy)
 
 ---
 
