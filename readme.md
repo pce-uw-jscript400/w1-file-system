@@ -45,8 +45,11 @@ We don't want to store data specifics in the code repo.  The data file could hav
 * **Your Answer:**
 
 Create - Creates (overwrites) the file
+
 Read - Reads, displays, the file
+
 Update - Revises the file content
+
 Delete - Deletes the file
 
 ---
@@ -58,19 +61,19 @@ Delete - Deletes the file
 * **Your Answer:**
 
 Create:  
-fs.writeFile(file, data[, options], callback)
-fs.createReadStream()
+* fs.writeFile(file, data[, options], callback)
+* fs.createReadStream()
 
 Read:  
-fs.readFile(path[, options], callback)
+* fs.readFile(path[, options], callback)
 
 Update: 
-fs.writeFile(file, data[, options], callback)
-fs.ftruncateSync(fd[, len])
-filehandle.appendFile(data, options)
+* fs.writeFile(file, data[, options], callback)
+* fs.ftruncateSync(fd[, len])
+* filehandle.appendFile(data, options)
 
 Delete: 
-fs.rmdir(path, callback)
+* fs.rmdir(path, callback)
 
 ---
 
@@ -80,9 +83,9 @@ fs.rmdir(path, callback)
 
 * **Your Answer:**
 
-readFileSync is synchronous; it blocks the next call.
+`readFileSync` is synchronous; it blocks the next call.
 
-readFile is non-blocking (asynchronous).
+`readFile` is non-blocking (asynchronous).
 
 ---
 
@@ -92,9 +95,9 @@ readFile is non-blocking (asynchronous).
 
 * **Your Answer:**
 
-writeFile might create a new file.  It overwrites the file if it exists.  Usually use this.
+`writeFile` might create a new file.  It overwrites the file if it exists.  Usually use this.
 
-appendFile will not create a new file.
+`appendFile` will not create a new file.
 
 ---
 
@@ -104,6 +107,7 @@ appendFile will not create a new file.
 
 * **Your Answer:**
 
+```
 const fs = require('fs')
 // read in the contents of the file:
 const contents = fs.readFileSync('./data/pets.json', 'utf-8')
@@ -115,6 +119,7 @@ pets.push({name: "Oliver", kind: "Cat", age: 2})
 const stringy = JSON.stringify(pets)
 // write entire array to file:
 fs.writeFileSync('./data/pets.json', stringy)
+```
 
 ---
 
@@ -128,12 +133,12 @@ fs.writeFileSync('./data/pets.json', stringy)
 
 * **Your Answer:**
 
-  const path = require('path')
+  `const path = require('path')`
 
   Imports the path module, as identifier 'path'.
 
 
-  const petsFile = path.join(__dirname, 'data', 'pets.json')
+  `const petsFile = path.join(__dirname, 'data', 'pets.json')`
 
   Creates the identifier 'petsFile' referring to the filepath 'data/pets.json'.
 
