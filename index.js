@@ -16,14 +16,13 @@ function read() {
 function create(name, kind, age) {
   var contents = read();
   const pets = JSON.parse(contents);
-  found = false;
 
   var obj = {};
   obj['name'] = name;
   obj['kind'] = kind;
   obj['age'] = age;
-
-  if (includes(name.name)) {
+  
+  if (includes(name) == '-1' ) {
     pets.push(obj);
     const stringy = JSON.stringify(pets);
     fs.writeFileSync(file, stringy, 'utf8'); 
@@ -34,12 +33,12 @@ function create(name, kind, age) {
 }
 
 //Function to test if array includes a value.
-function includes(obj) {
+function includes(name) {
   var contents = fs.readFileSync(file, 'utf8' );
   const pets = JSON.parse(contents);
-  var present = pets.includes(obj)
-
-  return present;
+  
+  var index = pets.findIndex(n => n.name == name)
+  return index;
 }
 
 //Remove object if exists, even more than once.
