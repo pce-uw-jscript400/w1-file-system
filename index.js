@@ -15,9 +15,7 @@ const create = function (name, kind, age){
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
-  if (  pets.find(pet => {
-    pet.name === name
-  } ) == -1 ) {
+  if ( !pets.find(pet => {pet.name === name} ) ) {
     // push in another pet
     pets.push({name: name, kind: kind, age: age})
     // transform back into a string
@@ -31,7 +29,7 @@ const create = function (name, kind, age){
 }
 
 const update = function(){
-
+// findIndex
 }
 
 const remove = function(){
