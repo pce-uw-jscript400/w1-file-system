@@ -3,13 +3,13 @@ const path = require('path')
 const petsFile = path.join(__dirname, 'data', 'pets.json')
 
 const read = function (){
-  const contents = fs.readFileSync('./pets.json', 'utf-8')
+  const contents = fs.readFileSync(petsFile, 'utf-8')
   return JSON.parse(contents)
 }
 
 const create = function (name, kind, age){
   // read in the contents of the file
-  const contents = fs.readFileSync('./pets.json', 'utf-8')
+  const contents = fs.readFileSync(petsFile, 'utf-8')
   // parse contents so it's a JS array (we could just call our read function)
   const pets = JSON.parse(contents)
 
@@ -23,7 +23,7 @@ const create = function (name, kind, age){
     // transform back into a string
     const stringy = JSON.stringify(pets)
     // write entire array to file
-    fs.writeFileSync('pets.json', stringy)
+    fs.writeFileSync(petsFile, stringy)
     return pets
   } else {
     console.log(`${name} is already a pet!`)
@@ -83,7 +83,7 @@ console.log(create('Duchess', 'bird', 2))
 
 // const fs = require('fs')
 // // read in the contents of the file
-// const contents = fs.readFileSync('./pets.json', 'utf-8')
+// const contents = fs.readFileSync('./data/pets.json', 'utf-8')
 // // parse contents so it's a JS array
 // const pets = JSON.parse(contents)
 // // push in another pet
@@ -91,7 +91,7 @@ console.log(create('Duchess', 'bird', 2))
 // // transform back into a string
 // const stringy = JSON.stringify(pets)
 // // write entire array to file
-// fs.writeFileSync('pets.json', stringy)
+// fs.writeFileSync('/data/pets.json', stringy)
 
 
 
@@ -99,7 +99,7 @@ console.log(create('Duchess', 'bird', 2))
 // console.log('Hello, Node!')
 
 // const fs = require('fs')
-// const contents = fs.readFileSync('pets.json')
+// const contents = fs.readFileSync('data/pets.json')
 
 // const json = JSON.parse(contents)
 // console.log(json)

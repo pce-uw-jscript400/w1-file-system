@@ -81,6 +81,7 @@ fs.rmdir(path, callback)
 * **Your Answer:**
 
 readFileSync is synchronous; it blocks the next call.
+
 readFile is non-blocking (asynchronous).
 
 ---
@@ -104,15 +105,15 @@ appendFile will not create a new file.
 * **Your Answer:**
 
 const fs = require('fs')
-// read in the contents of the file
+// read in the contents of the file:
 const contents = fs.readFileSync('./data/pets.json', 'utf-8')
-// parse contents so it's a JS array
+// parse contents so it's a JS array:
 const pets = JSON.parse(contents)
-// push in another pet
+// push in another pet:
 pets.push({name: "Oliver", kind: "Cat", age: 2})
-// transform back into a string
+// transform back into a string:
 const stringy = JSON.stringify(pets)
-// write entire array to file
+// write entire array to file:
 fs.writeFileSync('./data/pets.json', stringy)
 
 ---
@@ -126,6 +127,16 @@ fs.writeFileSync('./data/pets.json', stringy)
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+
+  const path = require('path')
+
+  Imports the path module, as identifier 'path'.
+
+
+  const petsFile = path.join(__dirname, 'data', 'pets.json')
+
+  Creates the identifier 'petsFile' referring to the filepath 'data/pets.json'.
+
 
 ### Exercise
 
