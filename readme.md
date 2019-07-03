@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:** Create: write , Read:   , Update: append or write , Delete:
+* **Your Answer:** Create: this would be a function when we are adding something to the file. Read: this would be a function to read the contents of the file. Update: this would be a function that would update/change the content of the file. Delete: this would be function to remove content/text/objects from the file.
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:** Create: writeFile() , Read: readFile()  , Update:   , Delete: 
+* **Your Answer:** Create: write() or writeFile() , Read: readFile() , Update: writeFile() or appendFile() , Delete: unlink() will remove a file.
 
 ---
 
@@ -54,7 +54,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:** readFileSync() is asyncronis, so you can still excute code while...
+* **Your Answer:** readFile() asynchronously reads the contents of the file, while readFileSync() returns the contents of the file path.
 
 ---
 
@@ -70,7 +70,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:** read file, translate to json, edit array, push object, and 
+* **Your Answer:** read the file readFile(), translate to json, edit the array, push object, and stringify
 
 ---
 
@@ -82,7 +82,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:** "require()" specifies that a module needs to be imported, and then petsfile specifies the path to the required file. 
 
 ### Exercise
 
