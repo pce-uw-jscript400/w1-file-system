@@ -26,7 +26,7 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:**Because we don't want to track the changes to that file
 
 ---
 
@@ -38,7 +38,7 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create would make the file, read would bring up the file, update would change it, delete would remove it. 
 
 ---
 
@@ -46,7 +46,7 @@ Hello, Node!
 
 * **Question:** What methods represent each CRUD action?
 
-* **Your Answer:**
+* **Your Answer:** fs.write to create a file, fs.read for reading, filehandle.appendFile for update, rm for remove
 
 ---
 
@@ -54,7 +54,7 @@ Hello, Node!
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** readFile is asynchronous readFileSync is  synchronous
 
 ---
 
@@ -62,7 +62,7 @@ Hello, Node!
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** writeFile creates the file and writes to it. It replaces it if it's already there. appendFile adds to the end of the file if it's already there, if not it creates that file. 
 
 ---
 
@@ -70,7 +70,7 @@ Hello, Node!
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** Pull in the .json parse it. Add your stuff in the middle and return the whole blob to the file
 
 ---
 
