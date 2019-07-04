@@ -44,6 +44,21 @@ const remove = function(theName) {
   return msg;
 };
 
+//Update
+const update = function (theName, theKind, theAge) { 
+  let msg = "";
+  parsePets.map((pet, idx) => {
+      if (theName === pet.name) {
+        pet.kind = theKind;
+        pet.age = theAge;
+        msg = parsePets;
+    } else {
+      msg = `No pet found by the name of ${theName}`;
+    }
+  });
+  return msg; 
+}
+
 console.log(read());
 // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
@@ -65,14 +80,14 @@ console.log(remove("Duchess"));
 console.log(read())
 // [ { name: 'Meowser', kind: 'cat', age: 3 } ]
 
-//console.log(update('Duchess', 'bird', 3))
+console.log(update('Duchess', 'bird', 3))
 // No pet found by the name of "Duchess"
 
-//console.log(update('Meowser', 'cat', 4))
+console.log(update('Meowser', 'cat', 4))
 // { name: 'Meowser', kind: 'cat', age: 4 }
 
-//console.log(read())
+console.log(read())
 // [ { name: 'Meowser', kind: 'cat', age: 4 } ]
 
-//console.log(update('Meowser', 'cat', 3))
+console.log(update('Meowser', 'cat', 3))
 // { name: 'Meowser', kind: 'cat', age: 3 }
