@@ -26,7 +26,11 @@ Hello, Node!
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
+
 * **Your Answer:**
+
+We don't want to store data specifics in the code repo.  The data file could have volatile and/or private data, that shouldn't be visible to people who are able to view the code.
+
 
 ---
 
@@ -40,6 +44,14 @@ Hello, Node!
 
 * **Your Answer:**
 
+Create - Creates (overwrites) the file
+
+Read - Reads, displays, the file
+
+Update - Revises the file content
+
+Delete - Deletes the file
+
 ---
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
@@ -47,6 +59,21 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
+
+Create:  
+* fs.writeFile(file, data[, options], callback)
+* fs.createReadStream()
+
+Read:  
+* fs.readFile(path[, options], callback)
+
+Update: 
+* fs.writeFile(file, data[, options], callback)
+* fs.ftruncateSync(fd[, len])
+* filehandle.appendFile(data, options)
+
+Delete: 
+* fs.rmdir(path, callback)
 
 ---
 
@@ -56,6 +83,10 @@ Hello, Node!
 
 * **Your Answer:**
 
+`readFileSync` is synchronous; it blocks the next call.
+
+`readFile` is non-blocking (asynchronous).
+
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
@@ -64,6 +95,10 @@ Hello, Node!
 
 * **Your Answer:**
 
+`writeFile` might create a new file.  It overwrites the file if it exists.  Usually use this.
+
+`appendFile` will not create a new file.
+
 ---
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
@@ -71,6 +106,20 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
+
+```
+const fs = require('fs')
+// read in the contents of the file:
+const contents = fs.readFileSync('./data/pets.json', 'utf-8')
+// parse contents so it's a JS array:
+const pets = JSON.parse(contents)
+// push in another pet:
+pets.push({name: "Oliver", kind: "Cat", age: 2})
+// transform back into a string:
+const stringy = JSON.stringify(pets)
+// write entire array to file:
+fs.writeFileSync('./data/pets.json', stringy)
+```
 
 ---
 
@@ -83,6 +132,16 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+
+  `const path = require('path')`
+
+  Imports the path module, as identifier 'path'.
+
+
+  `const petsFile = path.join(__dirname, 'data', 'pets.json')`
+
+  Creates the identifier 'petsFile' referring to the filepath 'data/pets.json'.
+
 
 ### Exercise
 
