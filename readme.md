@@ -27,7 +27,7 @@ Hello, Node!
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
 * **Your Answer:**
-
+To keep it from updated on github with every modificaiton
 ---
 
 - [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
@@ -39,6 +39,7 @@ Hello, Node!
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
+Create - initalise classmates.txt. Read - retreive data from the file. Update - replace or add information to the file. Delete - remove file.
 
 ---
 
@@ -47,7 +48,7 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
-
+Create: fs.writeFile() Read: fs.readFile() Update: fs.writeFile() Delete: fs.unlink
 ---
 
 - [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
@@ -55,7 +56,7 @@ Hello, Node!
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
-
+readFileSync() returns an object, readFile() calls a function when the file is finished loading
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
@@ -63,7 +64,7 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
-
+writeFile() replaces the existingt contents of a file, appendFile() adds data to the end
 ---
 
 - [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
@@ -71,7 +72,7 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
-
+Load the file into memory using readFile(), locate the insertion point for the new data, use .slice() or whatever appropriate method is needed for the data structure, then writeFile() to create the new file
 ---
 
 - [ ] In Node, you'll have access to a global variable called `__dirname`. Add the following to your `index.js` file.
@@ -83,7 +84,7 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
-
+creating a string made up of the directory name, data, and the filename.
 ### Exercise
 
 You now have the knowledge needed to edit files on your file system. **A note of caution:** this means you have the ability to delete files programmatically from your machine. That can be pretty dangerous! In this exercise and class, we will never be deleting any files programmatically. If you ever find yourself in a situation where you do need to do so, be careful.
