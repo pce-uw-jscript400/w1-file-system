@@ -55,7 +55,7 @@ Delete - deletes classmate object
 C - `fs.writeFile`
 R - `fs.readFile`
 U - `fs.appendFile`
-D - `fs.delete`
+D - `fs.unlink`
 
 ---
 
@@ -91,7 +91,7 @@ D - `fs.delete`
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:** Allows pets.json to be referenced as petsFile.
+* **Your Answer:** `__dirname`  is the name of the current module. `path.join()` is a Node function that takes in path segments as arguments. The function takes the paths and joins them into one path. The result in this case will return `/Users/jackieonofre/jscript_400/w1-file-system/data/pets.json` and assign it to variable petsFile.
 
 ### Exercise
 
