@@ -63,7 +63,7 @@ fs.unlink
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
-One is asynchronous, the other isn't. 
+Readfile is asynchronous, readfilesync isn't. 
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
