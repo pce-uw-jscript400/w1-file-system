@@ -97,6 +97,9 @@ writeFileSync
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+    * The code adds the path module to the project. The path module is for working with files and the directory structure.
+    *  \__dirname is the absolute path to the source file.
+    *  path.join() combines all the parameters into a path string: \[dirname]/data/pets.json in this case.
 
 ### Exercise
 
