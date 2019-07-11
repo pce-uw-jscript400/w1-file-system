@@ -27,6 +27,7 @@ Hello, Node!
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
 * **Your Answer:**
+Files that will be changed frequently should be put in .gitignore to avoid clogging up the changes list.
 
 ---
 
@@ -39,7 +40,10 @@ Hello, Node!
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
 * **Your Answer:**
-
+Create the file
+Read a record from the file
+Update a record in the file
+Delete a record from the file
 ---
 
 - [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
@@ -47,6 +51,10 @@ Hello, Node!
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
+fs.writeFile
+fs.readFileSync
+fs.writeFile
+fs.unlink
 
 ---
 
@@ -55,7 +63,7 @@ Hello, Node!
 * **Question:** What is the difference between these two methods?
 
 * **Your Answer:**
-
+Readfile is asynchronous, readfilesync isn't. 
 ---
 
 - [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
@@ -63,6 +71,7 @@ Hello, Node!
 * **Question:** Describe the difference between these two methods.
 
 * **Your Answer:**
+writeFile replaces the data in the specified file; appendFile adds data to the end of the file.
 
 ---
 
@@ -71,6 +80,11 @@ Hello, Node!
 * **Question:** How would you do so?
 
 * **Your Answer:**
+readFileSync
+JSON.parse
+push a new value to the array
+JSON.stringify
+writeFileSync
 
 ---
 
@@ -83,6 +97,9 @@ Hello, Node!
 * **Question:** Describe what is happening in the above code.
 
 * **Your Answer:**
+    * The code adds the path module to the project. The path module is for working with files and the directory structure.
+    *  \__dirname is the absolute path to the source file.
+    *  path.join() combines all the parameters into a path string: \[dirname]/data/pets.json in this case.
 
 ### Exercise
 
