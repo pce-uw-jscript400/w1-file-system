@@ -22,15 +22,19 @@ Hello, Node!
 
 ### Instructions & Guiding Questions
 
-- [ ] Begin by renaming `data/pets.sample.json` to `pets.json`
+- [X] Begin by renaming `data/pets.sample.json` to `pets.json`
 
 * **Question:** In this lesson we will be modifying the contents of the `pets.json` file. Why do you think that file appears inside of the `.gitignore` file?
 
-* **Your Answer:**
+* **Your Answer:** we do not want to upload the data to github. this is  because the data is static and we do not want to control its revisions. this also be because the data is private
 
 ---
 
-- [ ] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
+- [X] Take a look at the NodeJS documentation for the [fs module](https://nodejs.org/api/fs.html). When looking at documentation like this it can be overwhelming to start but you likely know more than you think. Take a moment to find a few concepts you understand.
+
+* fs.fchown
+* fs.write
+* fs.open
 
 ---
 
@@ -38,39 +42,43 @@ Hello, Node!
 
 * **Question:** Imagine you have a file called `classmates.txt`. For each part of CRUD, describe how the action would interact with the file.
 
-* **Your Answer:**
+* **Your Answer:** Create, Read, Update, and Delete (CRUD) are the four basic functions that models should be able to do, at least. Create makes the classmates.txt file. Read is used to 'view' the data. Update will modify its contents. Lastly, delete is used to remove data from the file.
 
 ---
 
-- [ ] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
+- [X] Consider the above and then look back through the [fs module](https://nodejs.org/api/fs.html) documentation.
 
 * **Question:** What methods represent each CRUD action?
 
 * **Your Answer:**
+* Create - fs.WriteStream
+* Read - fs.read
+* Update - fs.append
+* Delete - fs.rmdir
 
 ---
 
-- [ ] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
+- [X] Take a look at the following two methods: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) and [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
 * **Question:** What is the difference between these two methods?
 
-* **Your Answer:**
+* **Your Answer:** readFile has a callback argument. Also, fs.readfile() is asynchronous, while fs.readFileSync() is synchronous.
 
 ---
 
-- [ ] Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
+- [X]Take a look at [fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) and [fs.appendFile()](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback).
 
 * **Question:** Describe the difference between these two methods.
 
-* **Your Answer:**
+* **Your Answer:** writeFile completely rewrites the file. appendFile appends to the end of the file
 
 ---
 
-- [ ] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
+- [X] Imagine you want to edit the middle of a file. You can use the [fs module](https://nodejs.org/api/fs.html) and the JavaScript language.
 
 * **Question:** How would you do so?
 
-* **Your Answer:**
+* **Your Answer:** you could try to read in the file (fs.readFileSync()), convert string to the specified data type (i.e. json,fs), manipulate the data (i.e. add object to object array), convert back into string, and write the file (fs.writeFileSync())
 
 ---
 
@@ -82,7 +90,7 @@ Hello, Node!
 
 * **Question:** Describe what is happening in the above code.
 
-* **Your Answer:**
+* **Your Answer:**  __dirname is the absolute path to the directory containing the source file that is being executed. Will always be the same (unless you move the file). This will add /data/pets.json to the directory path to create the path to the pets.json file
 
 ### Exercise
 
